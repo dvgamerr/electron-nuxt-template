@@ -1,10 +1,19 @@
 module.exports = {
-  /*
-  ** Electron Settings
-  */
   electron: {
-    width: 1024,
-    height: 768
+    width: 600,
+    height: 360,
+    minWidth: 600,
+    minHeight: 360,
+    maxWidth: 600,
+    maxHeight: 360,
+    'node-integration': false,
+    icon: 'src/renderer/assets/touno.ico',
+    show: true,
+    movable: true,
+    resizable: false,
+    alwaysOnTop: false,
+    skipTaskbar: false,
+    transparent: false
   },
   build: {
     extend (config, { isClient }) {
