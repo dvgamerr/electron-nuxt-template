@@ -14,7 +14,10 @@
   },
   "dependencies": {
     "cross-env": "^3.1.4",
-    "electron": "latest",
-    "nuxt": "latest"
+    "electron": "^1.8.1",
+    "nuxt": "^1.0.0"
+  },
+  "devDependencies": {
+    "electron-packager": "^10.1.2"
   }
 }
