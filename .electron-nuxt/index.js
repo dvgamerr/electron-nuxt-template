@@ -1,7 +1,8 @@
 import http from 'http'
 import { Nuxt, Builder } from 'nuxt'
+import electron from './electron'
 
-export default async () => {
+const ServerRender =  async () => {
   process.env.NODE_ENV = process.env.NODE_ENV || 'production'
   let win = null // Current window
 
@@ -21,4 +22,11 @@ export default async () => {
 
   // Listen the serverasdasd
   await server.listen()
+  await electron(config, server)
 }
+
+ServerRender().then(() => {
+
+}).catch(ex => {
+  console.log('ex', ex)
+})
