@@ -40,3 +40,18 @@ export default async (config, server) => {
   electron.app.on('activate', () => win === null && newWin())
 
 }
+
+function startElectron () {
+  electronProcess = spawn(electron, ['--inspect=5858', path.join(__dirname, '../dist/electron/main.js')])
+
+  electronProcess.stdout.on('data', data => {
+    electronLog(data, 'blue')
+  })
+  electronProcess.stderr.on('data', data => {
+    electronLog(data, 'red')
+  })
+
+  electronProcess.on('close', () => {
+    if (!manualRestart) process.exit()
+  })
+}

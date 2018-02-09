@@ -7,8 +7,8 @@ const ServerRender =  async () => {
 
   // Import and Set Nuxt.js options
   let config = require('./../nuxt.config.js')
-  config.dev = !(process.env.NODE_ENV === 'production')
-  config.rootDir = `${__dirname}/../` // for electron-packager
+  config.dev = !((process.env.NODE_ENV || 'production') === 'production')
+  config.rootDir = __dirname // for electron-packager
   if (config.dev) process.env.DEBUG = 'nuxt:*'
 
   // Init Nuxt.js
