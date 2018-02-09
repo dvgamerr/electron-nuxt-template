@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron'
+import electron from 'electron'
 import path from 'path'
 import url from 'url'
 
@@ -19,7 +19,7 @@ export default async (config, server) => {
   }
 
   const newWin = () => {
-    win = new BrowserWindow({
+    win = new electron.BrowserWindow({
       width: config.electron.width || 800,
       height: config.electron.height || 600
     })
@@ -35,8 +35,8 @@ export default async (config, server) => {
     pollServer()
   }
 
-  app.on('ready', newWin)
-  app.on('window-all-closed', () => app.quit())
-  app.on('activate', () => win === null && newWin())
+  electron.app.on('ready', newWin)
+  electron.app.on('window-all-closed', () => electron.app.quit())
+  electron.app.on('activate', () => win === null && newWin())
 
 }

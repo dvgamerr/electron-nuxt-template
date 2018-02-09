@@ -3,13 +3,12 @@ import { Nuxt, Builder } from 'nuxt'
 import electron from './electron'
 
 const ServerRender =  async () => {
-  process.env.NODE_ENV = process.env.NODE_ENV || 'production'
   let win = null // Current window
 
   // Import and Set Nuxt.js options
   let config = require('./../nuxt.config.js')
   config.dev = !(process.env.NODE_ENV === 'production')
-  config.rootDir = __dirname // for electron-packager
+  config.rootDir = `${__dirname}/../` // for electron-packager
   if (config.dev) process.env.DEBUG = 'nuxt:*'
 
   // Init Nuxt.js
