@@ -14,6 +14,7 @@ const mainServer = async (url) => {
   proc.on('close', () => { process.exit() })
   proc.on('exit', () => { process.exit() })
 }
+
 let server = null
 const renderServer =  async () => {
   // Import and Set Nuxt.js options
