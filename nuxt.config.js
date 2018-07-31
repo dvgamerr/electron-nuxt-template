@@ -1,11 +1,11 @@
 module.exports = {
   electron: {
-    width: 600,
-    height: 360,
-    minWidth: 600,
-    minHeight: 360,
-    maxWidth: 600,
-    maxHeight: 360,
+    width: 800,
+    height: 600,
+    minWidth: 800,
+    minHeight: 600,
+    maxWidth: 800,
+    maxHeight: 600,
     'node-integration': false,
     icon: 'src/renderer/assets/touno.ico',
     show: true,

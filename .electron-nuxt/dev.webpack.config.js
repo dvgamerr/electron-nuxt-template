@@ -17,7 +17,6 @@ let mainConfig = {
   ],
   module: {
     rules: [
-{{#if eslint}}
       {
         test: /\.(js)$/,
         enforce: 'pre',
@@ -29,7 +28,6 @@ let mainConfig = {
           }
         }
       },
-{{/if}}
       {
         test: /\.js$/,
         use: 'babel-loader',
