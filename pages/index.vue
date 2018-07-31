@@ -25,8 +25,6 @@ export default {
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.Landscape__Logo {
-}
 .Landscape__Title {
   text-align: center;
 }
